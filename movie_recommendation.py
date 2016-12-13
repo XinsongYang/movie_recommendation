@@ -113,7 +113,7 @@ def item_based_recommendations(user_ratings, item_ratings, user_id, sim_fun=sim_
 	return rankings[0:n]
 
 
-def test():
+def test_experiment():
 	# make train and test data
 	test_user_percent = 0.2
 	users = list(user_ratings.keys())
@@ -147,54 +147,26 @@ def test():
 				break
 	print(success)
 
-print(sim_distance(user_ratings,'fengliang','xinsong',isAdjust=False))
-print(sim_pearson(user_ratings,'fengliang','xinsong',isAdjust=False))
-print(sim_distance(user_ratings,'fengliang','xinsong',isAdjust=True))
-print(sim_pearson(user_ratings,'fengliang','xinsong',isAdjust=True))
+def test_cases():
+	print(sim_distance(user_ratings,'fengliang','xinsong',isAdjust=False))
+	print(sim_pearson(user_ratings,'fengliang','xinsong',isAdjust=False))
+	print(sim_distance(user_ratings,'fengliang','xinsong',isAdjust=True))
+	print(sim_pearson(user_ratings,'fengliang','xinsong',isAdjust=True))
 
-# print(user_based_recommendations(user_ratings, 'xinsong', sim_fun=sim_distance, n=10, isAdjust=False))
-# print('\n')
-# print(user_based_recommendations(user_ratings, 'xinsong', sim_fun=sim_distance, n=10, isAdjust=True))
-# print('\n')
-# print(user_based_recommendations(user_ratings, 'xinsong', sim_fun=sim_pearson, n=10, isAdjust=False))
-# print('\n')
-# print(user_based_recommendations(user_ratings, 'xinsong', sim_fun=sim_pearson, n=10, isAdjust=True))
-# print('\n')
-# print(item_based_recommendations(user_ratings, movie_ratings, 'xinsong', sim_fun=sim_distance, n=10, isAdjust=False))
-# print('\n')
-# print(item_based_recommendations(user_ratings, movie_ratings, 'xinsong', sim_fun=sim_distance, n=10, isAdjust=True))
-# print('\n')
-# print(item_based_recommendations(user_ratings, movie_ratings, 'xinsong', sim_fun=sim_pearson, n=10, isAdjust=False))
-# print('\n')
-# print(item_based_recommendations(user_ratings, movie_ratings, 'xinsong', sim_fun=sim_pearson, n=10, isAdjust=True))
-# print('\n')
+	print(user_based_recommendations(user_ratings, 'xinsong', sim_fun=sim_distance, n=10, isAdjust=False))
+	print(user_based_recommendations(user_ratings, 'xinsong', sim_fun=sim_distance, n=10, isAdjust=True))
+	print(user_based_recommendations(user_ratings, 'xinsong', sim_fun=sim_pearson, n=10, isAdjust=False))
+	print(user_based_recommendations(user_ratings, 'xinsong', sim_fun=sim_pearson, n=10, isAdjust=True))
+	print(item_based_recommendations(user_ratings, movie_ratings, 'xinsong', sim_fun=sim_distance, n=10, isAdjust=False))
+	print(item_based_recommendations(user_ratings, movie_ratings, 'xinsong', sim_fun=sim_distance, n=10, isAdjust=True))
+	print(item_based_recommendations(user_ratings, movie_ratings, 'xinsong', sim_fun=sim_pearson, n=10, isAdjust=False))
+	print(item_based_recommendations(user_ratings, movie_ratings, 'xinsong', sim_fun=sim_pearson, n=10, isAdjust=True))
 
-# print(user_based_recommendations(user_ratings, 'fengliang', sim_fun=sim_distance, n=10, isAdjust=False))
-# print('\n')
-# print(user_based_recommendations(user_ratings, 'fengliang', sim_fun=sim_distance, n=10, isAdjust=True))
-# print('\n')
-# print(user_based_recommendations(user_ratings, 'fengliang', sim_fun=sim_pearson, n=10, isAdjust=False))
-# print('\n')
-# print(user_based_recommendations(user_ratings, 'fengliang', sim_fun=sim_pearson, n=10, isAdjust=True))
-# print('\n')
-# print(item_based_recommendations(user_ratings, movie_ratings, 'fengliang', sim_fun=sim_distance, n=10, isAdjust=False))
-# print('\n')
-# print(item_based_recommendations(user_ratings, movie_ratings, 'fengliang', sim_fun=sim_distance, n=10, isAdjust=True))
-# print('\n')
-# print(item_based_recommendations(user_ratings, movie_ratings, 'fengliang', sim_fun=sim_pearson, n=10, isAdjust=False))
-# print('\n')
-# print(item_based_recommendations(user_ratings, movie_ratings, 'fengliang', sim_fun=sim_pearson, n=10, isAdjust=True))
-# print('\n')
-
-
-# def items_similarities(item_ratings, similarity=sim_distance, n=5):
-# 	similarities = {}
-# 	count = 0
-# 	for item in item_ratings:
-# 		count += 1
-# 		if count % 100 == 0: print(count, '/', len(item_ratings) )
-# 		scores = [(similarity(item_ratings, item, other_item), other_item) for other_item in item_ratings if other_item != item]
-# 		scores.sort()
-# 		scores.reverse()
-# 		similarities[item] = scores[0:n]
-# 	return similarities
+	print(user_based_recommendations(user_ratings, 'fengliang', sim_fun=sim_distance, n=10, isAdjust=False))
+	print(user_based_recommendations(user_ratings, 'fengliang', sim_fun=sim_distance, n=10, isAdjust=True))
+	print(user_based_recommendations(user_ratings, 'fengliang', sim_fun=sim_pearson, n=10, isAdjust=False))
+	print(user_based_recommendations(user_ratings, 'fengliang', sim_fun=sim_pearson, n=10, isAdjust=True))
+	print(item_based_recommendations(user_ratings, movie_ratings, 'fengliang', sim_fun=sim_distance, n=10, isAdjust=False))
+	print(item_based_recommendations(user_ratings, movie_ratings, 'fengliang', sim_fun=sim_distance, n=10, isAdjust=True))
+	print(item_based_recommendations(user_ratings, movie_ratings, 'fengliang', sim_fun=sim_pearson, n=10, isAdjust=False))
+	print(item_based_recommendations(user_ratings, movie_ratings, 'fengliang', sim_fun=sim_pearson, n=10, isAdjust=True))
